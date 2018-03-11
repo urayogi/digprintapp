@@ -1,23 +1,32 @@
 <?php
+//ambil config dan fungsi2
 include "inc/config.php";
 include "inc/func.template.php";
-include "inc/func.sql.php";
+//cek user di session
 $user_id = $_REQUEST['id'];
 $user_id = $_SESSION['user_id'];
+$login = ''.$urlbase_admin.'login';
 
+if (!isset($_SESSION['username']))
+	{
+header('location:'.$login.'');
+exit;
+	}
+
+//request di url
 $mod = $_REQUEST['mod'];
 $sub = $_REQUEST['sub'];
-$ntfy = $_REQUEST['ntfy'];
-$act =  $_REQUEST['act'];
-
+$action =  $_REQUEST['action'];
 $id = $_REQUEST['id'];
 
+//ambek module sesuai request
 if (!empty($mod)) {
 	$mod_path = "modules/$mod/index.php";
-	include ($mod_path);
+	include_once ($mod_path);
 }
+//link sesat
 else {
-	include('pages/404.php');
+	include_once ('pages/404.php');
 }
 
 ?>
