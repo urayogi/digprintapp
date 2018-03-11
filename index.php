@@ -1,11 +1,12 @@
 <?php
+session_start();
 //ambil config dan fungsi2
 include "inc/config.php";
 include "inc/func.template.php";
 //cek user di session
 $user_id = $_REQUEST['id'];
 $user_id = $_SESSION['user_id'];
-$login = ''.$urlbase_admin.'login';
+$login = ''.$urlbase_admin.'login.php';
 
 if (!isset($_SESSION['username']))
 	{
