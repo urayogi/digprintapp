@@ -1,7 +1,7 @@
 <?php
 //lempar user ke habitatnye
 if (empty($act) and $_SESSION['level']==1) {
-	include_once 'default.php';
+	include_once 'master_user.php';
 }
 else if (empty($act) and $_SESSION['level']==3) {
 	include_once 'profile.php';
