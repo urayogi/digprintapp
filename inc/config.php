@@ -8,7 +8,7 @@ $timeset = $date->format('Y-m-d H:i:s');
 //Config Database Mysqli
 $dbhost = 'localhost';
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = '091101929';
 $dbname = 'digprintapp';
 // Koneksikan db nye
 $db = new mysqli($dbhost, $dbuser, $dbpass, $dbname);

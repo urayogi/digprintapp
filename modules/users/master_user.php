@@ -1,6 +1,7 @@
 <?php
 echo bukahead('Manajemen Pengguna');
-  echo tutuphead();
+
+echo tutuphead();
 include_once 'inc/header.php';
 include_once 'inc/sidebar.php';
 ?>
@@ -11,9 +12,10 @@ include_once 'inc/sidebar.php';
     <div class="row mt">
       <div class="col-lg-12">
                 <div class="content-panel">
+                  <div class="table-responsive">
                 <h4><i class="fa fa-angle-right"></i> Data Pengguna</h4>
 
-                    <table class="table" id="bootstrap-table">
+                    <table class="table table-bordered table-striped table-condensed data">
                         <thead>
                             <tr>
                                 <th data-field="Nama Awal" data-sortable="true">Nama Awal</th>
@@ -57,7 +59,7 @@ include_once 'inc/sidebar.php';
                                     ?>
                                     </tr>
                         </table>
-
+                      </div>
 
                 </div><!-- /content-panel -->
       </div><!-- /col-lg-12 -->
@@ -68,18 +70,11 @@ include_once 'inc/sidebar.php';
 echo bukafooter();
 //javascript diantare buka & tutup footer
 ?>
-<script src="assets/js/jquery.bdt.min.js"></script>
-<script src="assets/js/jquery.sortelements.js"></script>
-
-<script>
-    $(document).ready( function () {
-        $('#bootstrap-table').bdt({
-            showSearchForm: 1,
-            showEntriesPerPageField: 1
-        });
-    });
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.data').DataTable();
+	});
 </script>
-
 <?php
 echo tutupfooter();
 ?>

@@ -1,8 +1,9 @@
 <?php
 session_start();
 //ambil config dan fungsi2
-include "inc/config.php";
-include "inc/func.template.php";
+include_once "inc/config.php";
+include_once "inc/func.template.php";
+include_once "inc/func.app.php";
 
 //cek user di session
 $login = ''.$urlbase_admin.'login.php';

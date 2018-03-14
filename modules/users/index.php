@@ -3,7 +3,7 @@
 if (empty($act) and $_SESSION['level']==1) {
 	include_once 'master_user.php';
 }
-else if (empty($act) and $_SESSION['level']==3) {
+else if ($_SESSION['level']==3 OR $_SESSION['level']==2 OR $_SESSION['level']==4) {
 	include_once 'profile.php';
 }
 
