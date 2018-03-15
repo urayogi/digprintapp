@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2018 at 11:33 PM
+-- Generation Time: Mar 15, 2018 at 10:34 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -57,9 +57,9 @@ CREATE TABLE `admin_users` (
   `password` varchar(255) NOT NULL,
   `group_id` int(11) NOT NULL,
   `active` tinyint(1) DEFAULT NULL,
-  `created_on` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `last_login` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `last_logout` timestamp NULL DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `last_logout` datetime DEFAULT NULL,
   `first_name` varchar(100) DEFAULT NULL,
   `last_name` varchar(100) DEFAULT NULL,
   `online_status` tinyint(1) DEFAULT NULL,
@@ -71,8 +71,8 @@ CREATE TABLE `admin_users` (
 --
 
 INSERT INTO `admin_users` (`id`, `username`, `email`, `password`, `group_id`, `active`, `created_on`, `last_login`, `last_logout`, `first_name`, `last_name`, `online_status`, `ref`) VALUES
-(2, 'admin', 'admin@admin.com', '202cb962ac59075b964b07152d234b70', 1, NULL, NULL, '2018-03-11 09:29:48', '2018-03-11 09:29:46', 'Admin', 'nistrator', NULL, 0),
-(10, 'user', 'user@user', '12dea96fec20593566ab75692c9949596833adc9', 3, NULL, '2017-12-09 04:21:37', '2018-01-12 23:21:48', NULL, 'user', 'user', NULL, 0);
+(2, 'admin', 'admin@admin.com', '202cb962ac59075b964b07152d234b70', 1, NULL, NULL, '2018-03-13 13:51:52', '2018-03-11 16:29:46', 'Admin', 'nistrator', NULL, 0),
+(10, 'user', 'user@user', '12dea96fec20593566ab75692c9949596833adc9', 3, NULL, '2017-12-09 11:21:37', '2018-01-13 06:21:48', NULL, 'user', 'user', NULL, 0);
 
 --
 -- Indexes for dumped tables
