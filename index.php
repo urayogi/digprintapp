@@ -13,7 +13,7 @@ header('location:'.$login.'');
 exit;
 	}
 
-//request di url module
+//request di url module coy
 $mod = $_REQUEST['mod'];
 $sub = $_REQUEST['sub'];
 $act =  $_REQUEST['act'];
