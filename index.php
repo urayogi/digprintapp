@@ -18,7 +18,7 @@ $mod = $_REQUEST['mod'];
 $sub = $_REQUEST['sub'];
 $act =  $_REQUEST['act'];
 $id = $_REQUEST['id'];
-
+$notify = $_REQUEST['ntfy'];
 //set halaman dashboard landing awal
 $landing = "modules/users/index.php";
 

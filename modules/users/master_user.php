@@ -1,6 +1,5 @@
 <?php
 echo bukahead('Manajemen Pengguna');
-
 echo tutuphead();
 include_once 'inc/header.php';
 include_once 'inc/sidebar.php';
@@ -8,12 +7,12 @@ include_once 'inc/sidebar.php';
 
 <section id="main-content">
     <section class="wrapper">
-      <h3><i class="fa fa-angle-right"></i> Master Data Pengguna</h3>
+      <h3><i class="fa fa-angle-right"></i>Master Data Pengguna</h3>
     <div class="row mt">
       <div class="col-lg-12">
                 <div class="content-panel">
                   <div class="table-responsive">
-                <h4><i class="fa fa-angle-right"></i> Data Pengguna</h4>
+                <h4><i class="fa fa-angle-right"></i>  + Tambah Data Pengguna</h4>
 
                     <table class="table table-bordered table-striped table-condensed data">
                         <thead>

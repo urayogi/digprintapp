@@ -1,11 +1,9 @@
 <?php
-//deklarasi var
-define(username, $_SESSION['username']);
-//fungsinye
-function thumbprofile ($path=username) {
-	$kode = './lib/thumb.php?src=../assets/img/profile/'.$path.'.jpg&size=100x60';
-	return $kode;
-}
+//buka panel laman
+define(mod, $_REQUEST['mod']);
+define(act, $_REQUEST['act']);
+
+define(user_name, $_SESSION['name']);
 
 function newpanel($name ='', $submod = '', $module=mod) {
 	if (mod=="home") {
@@ -65,7 +63,7 @@ return $panel;
 
 function col6 ($name ='', $module=mod) {
 	$panel = '
-
+	             
                   <div class="col-lg-6">
                       <!--notification start-->
                       <section class="panel">
@@ -78,7 +76,7 @@ function col6 ($name ='', $module=mod) {
 }
 function col12 ($name ='', $module=mod) {
 	$panel = '
-
+	             
                   <div class="col-lg-12">
                       <!--notification start-->
                       <section class="panel">
@@ -108,10 +106,9 @@ function closepanel () {
 	return $panel;
 }
   //buat form
-	function form ($action='', $judulform='', $name='') {
-		$form = '<div class="form-panel">
-						<h4 class="mb"><i class="fa fa-angle-right"></i> '.$judulform.'</h4>
-					<form class="form-horizontal style-form" id="register_form" method="post" name="'.$name.'" action="'.$action.'" enctype="multipart/form-data">';
+	function form ($action='', $name='') {
+		$form = '<div class="form">
+					<form class="form-validate form-horizontal" id="register_form" method="post" role="form" name="'.$name.'" action="'.$action.'">';
 		return $form;
 	}
 	//input form, sebagian jak ahhaha
@@ -128,9 +125,9 @@ function closepanel () {
 	    		$span = '';
 	    	}
 	        $form = '<div class="form-group">
-					<label class="col-sm-2 col-sm-2 control-label">'.$label.' '.$span.'</label>
+					<label for="cname" class="control-label col-lg-2">'.$label.' '.$span.'</label>
                     <div class="col-lg-10">
-                           <input class="form-control" name="'.$name.'" '.$ptext.' type="text" value="'.$value.'" '.$required.' '.$disabled.'/>
+                           <input class="form-control" id="cname" name="'.$name.'" '.$ptext.' type="text" value="'.$value.'" '.$required.' '.$disabled.'/>
                     </div>
                     </div>
 					';
@@ -142,7 +139,7 @@ function closepanel () {
 	    	else {
 	    		$isi ='';
 	    	}
-	        $form = '<div class="form-group">
+	        $form = '<div class="form-group ">
                       <label for="password" class="control-label col-lg-2">'.$label.' <span class="required">*</span></label>
                       <div class="col-lg-10">
                           <input class="form-control " id="password" name="'.$name.'" type="password" '.$isi.' '.$disabled.' />
@@ -156,10 +153,10 @@ function closepanel () {
                      </div>
 					';
 	    }
-	    else if($type=='radio'){
-	        $form = '<div class="radio">
+	    else if($type=='checkbox'){
+	        $form = '<div class="form-group">
 						<label>'.$label.'</label>
-						<input type="radio" name="'.$name.'" checked="checked" />
+						<input type="checkbox" name="'.$name.'" class="'.$class.'" />
 					</div>
 					';
 	    }
@@ -175,17 +172,17 @@ function closepanel () {
 	    else if($type=='submit'){
 	        $form = '<div class="form-group">
                        <div class="col-lg-offset-2 col-lg-10">
-	        			<button class="btn btn-primary" type="submit">'.$name.'</button> &nbsp; <input type="reset" value="Batal!!!" class="btn btn-default"  />
+	        			<button class="btn btn-primary" type="submit">'.$name.'</button>
 	        			</div>
 	        			</div>';
 	    }
 	    else if($type=='reset'){
-	        $form = '<input type="reset" value="Batal!!!" class="btn btn-default"  />';
+	        $form = '<input type="reset" value="Reset/Kosongkan" class="btn btn-default"  />';
 	    }
 	    else if($type=='textarea'){
 	        $form = '<div class="form-group">
 						<label>'.$label.'</label>
-						<textarea name="'.$name.'" '.$disabled.' >'.$value.'</textarea>
+						<textarea name="'.$name.'" class="'.$class.'" '.$disabled.' >'.$value.'</textarea>
 					</div>';
 	    }
 	    elseif ($type=='closeform') {
@@ -198,27 +195,4 @@ function closepanel () {
 	    }
 	    return $form;
 		}
-		function formradio ($label='') {
-			$form = '<div class="form-group">
-			<label class="col-sm-2 col-sm-2 control-label">'.$label.' '.$span.'</label>
-								<div class="col-lg-10">';
-			return $form;
-		}
-
-		function radio ($name='', $label='', $value='') {
-			$form = '<div class="radio">
-						  <label>
-						    <input type="radio" name="'.$name.'" value="'.$value.'">
-						    '.$label.'
-						  </label>
-						</div>';
-			return $form;
-		}
-		function tutupradio () {
-			$form = '
-			</div>
-			</div>';
-			return $form;
-		}
-
 ?>

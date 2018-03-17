@@ -26,6 +26,7 @@ MAIN SIDEBAR MENU
                     <li><a  href="general.html">Master Barang</a></li>
                     <li><a  href="buttons.html">Kategori</a></li>
                     <li><a  href="panels.html">Manajemen Stok</a></li>
+                    <li><a href="./?mod=pelanggan">Data Pelanggan</a></li>
                 </ul>
             </li>
 
@@ -33,6 +34,12 @@ MAIN SIDEBAR MENU
                 <a href="./?mod=transaksi">
                     <i class="fa fa-dashboard"></i>
                     <span>Pengguna</span>
+                </a>
+            </li>
+                 <li class="">
+                <a href="./?mod=users">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Admin</span>
                 </a>
             </li>
 

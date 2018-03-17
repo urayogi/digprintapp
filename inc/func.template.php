@@ -48,17 +48,14 @@ function linkhead ($tipe ='', $link='') {
 	}
 	return $isinye;
 }
-
 function tutuphead () {
 	$tagnye = '
 	</head>
 	<body>';
 	return $tagnye;
 }
-
 function bukafooter () {
 	$tagnye = '
-
 	<!--main content end-->
 	<!--footer start-->
 	<footer class="site-footer">
@@ -92,5 +89,4 @@ function tutupfooter () {
 </html>';
 	return $tagnye;
 }
-
  ?>
