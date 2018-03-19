@@ -8,11 +8,34 @@ include_once 'inc/sidebar.php';
 <section id="main-content">
     <section class="wrapper">
       <h3><i class="fa fa-angle-right"></i>Master Data Pengguna</h3>
+      <?php
+      if ($notify=="sukses") {
+        echo '<div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Berhasil!</strong> Data Sudah Disimpan.
+              </div>
+                ';
+      }
+      elseif ($notify=="gagal") {
+        echo '<div class="alert alert-dangers alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Operasi Gagal!</strong> Mohon dicek kembali.
+              </div>
+              ';
+      }
+      elseif ($notify=="sukseshapus") {
+        echo '<div class="alert alert-warning alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Berhasil!</strong> Data Sudah Terhapus.
+              </div>
+              ';
+      }?>
     <div class="row mt">
       <div class="col-lg-12">
                 <div class="content-panel">
                   <div class="table-responsive">
-                <h4><i class="fa fa-angle-right"></i>  + Tambah Data Pengguna</h4>
+                <h4><a href="./?mod=<?php echo $mod?>&act=baru"><button type="button" class="btn btn-primary btn-lg">Tambah Pengguna Baru</button></a></h4>
+
 
                     <table class="table table-bordered table-striped table-condensed data">
                         <thead>
@@ -47,8 +70,8 @@ include_once 'inc/sidebar.php';
                           						    Action <span class="caret"></span>
                           						  </button>
                           						  <ul class="dropdown-menu" role="menu">
-                          						    <li><a href="./index.php?mod=<?php echo $mod?>&act=edit&id=<?php echo $data['id']?>&ref=<?php echo $_SESSION['user_id']?>">Edit</a></li>
-                          						    <li><a href="modules/<?php echo $mod?>/proccess.php?mod=<?php echo $mod?>&act=delete&id=<?php echo $data['id']?>&ref=<?php echo $_SESSION['user_id']?>">Hapus</a></li>
+                          						    <li><a href="./index.php?mod=<?php echo $mod?>&act=edit&id_user=<?php echo $data['id_user']?>&ref=<?php echo $_SESSION['user_id']?>">Edit</a></li>
+                          						    <li><a href="modules/<?php echo $mod?>/proses.php?mod=<?php echo $mod?>&act=delete&id_user=<?php echo $data['id_user']?>&ref=<?php echo $_SESSION['user_id']?>" onclick="return tanya()">Hapus</a></li>
 
                           						  </ul>
                           						</div>
@@ -73,6 +96,16 @@ echo bukafooter();
 	$(document).ready(function(){
 		$('.data').DataTable();
 	});
+</script>
+<script language="javascript">
+  function tanya() {
+  if (confirm("Yakin Hapus Record Ini???")) {
+  return true;
+    }
+    else {
+    return false;
+    }
+  }
 </script>
 <?php
 echo tutupfooter();

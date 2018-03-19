@@ -81,6 +81,8 @@ function tutupfooter () {
 	<script src="assets/js/jquery.scrollTo.min.js"></script>
 	<script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 	<script src="assets/js/modernizr.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/form-validation-script.js"></script>
 
 	<!--common script for all pages-->
 	<script src="assets/js/common-scripts.js"></script>
