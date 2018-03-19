@@ -3,3 +3,4 @@ DATABASE UDA ADE BROOO
 forminput($type='', $name='', $label='', $required='',$value='',$length='', $disabled='')
 care makainye
 echo forminput('jenis input', 'name input', 'label di depan', 'required validasi', 'value kalau ngedit', 'panjang huruf', 'disable ndak')
+hgfgf
