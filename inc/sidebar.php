@@ -27,6 +27,9 @@ MAIN SIDEBAR MENU
                     <li><a  href="buttons.html">Kategori</a></li>
                     <li><a  href="panels.html">Manajemen Stok</a></li>
                     <li><a href="./?mod=pelanggan">Data Pelanggan</a></li>
+                     <li><a href="./?mod=digital">Data Digital Induk</a></li>
+                     
+                        <li><a href="./?mod=digita_anak">Data Digital Anak</a></li>
                 </ul>
             </li>
 
