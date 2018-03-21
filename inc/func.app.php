@@ -156,6 +156,27 @@ function closepanel () {
                      </div>
 					';
 	    }
+			else if($type=='passwordedit'){
+	    	if (!empty($value)) {
+	    	$isi = 'value="'.$value.'"';
+	    	}
+	    	else {
+	    		$isi ='';
+	    	}
+	        $form = '<div class="form-group">
+                      <label for="passwordedit" class="control-label col-lg-2">'.$label.' <span class="small mt">(Kosongkan Jika Tidak Diubah) </span></label>
+                      <div class="col-lg-10">
+                          <input class="form-control " id="passwordedit" name="'.$name.'" type="password" '.$isi.' '.$disabled.' />
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                          <label for="confirm_passwordedit" class="control-label col-lg-2">Konfirmasi Password <span class="small mt">(Kosongkan Jika Tidak Diubah) </span></label>
+                          <div class="col-lg-10">
+                              <input class="form-control" id="confirm_passwordedit" name="confirm_passwordedit" type="password" '.$isi.' '.$disabled.' />
+                          </div>
+                     </div>
+					';
+	    }
 	    else if($type=='radio'){
 	        $form = '<div class="radio">
 						<label>'.$label.'</label>
