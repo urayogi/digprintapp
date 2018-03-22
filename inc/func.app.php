@@ -226,6 +226,12 @@ function closepanel () {
 			return $form;
 		}
 
+		function inputhidden ($name='', $value='') {
+		 $form = '	<input type="hidden" name="'.$name.'" value="'.$value.'">
+		 ' ;
+		 return $form;
+	 	}
+
 		function radio ($name='', $label='', $value='') {
 			$form = '<div class="radio">
 						  <label>
@@ -241,5 +247,23 @@ function closepanel () {
 			</div>';
 			return $form;
 		}
+		function inputoption ($name='', $table='',$fieldvalue='',$fieldselect='' ,$sort='', $sortfield='') {
+			$form ='
+				<select>
+
+
+				';
+			$query = "SELECT * FROM $table ORDER BY $sortfield $sort";
+		  $result = mysqli_query($con, $query);
+		  while ($data = mysqli_fetch_assoc($result)) {
+		  $cetakselect = '
+			     <option value="'.$data[''.$fieldvalue.''].'">'.$data[''.$fieldselect.''].'</option>
+			';
+			 }'
+			   </select>';
+				 return $cetakselect;
+			}
+			return $form;
+
 
 ?>
